@@ -1,0 +1,3 @@
+/**
+ * @modules hubiquitus library addons
+ */

@@ -14,12 +14,11 @@ var chan = channel.createChannel("chan");
 // starting hubiquitus with 1 publisher and 2 subscribers
 hubiquitus.start()
   .addActor("pub", publisher)
-  .addActor("sub1", subscriber)
-  .addActor("sub2", subscriber);
+  .addActor("sub", subscriber)
+  .addActor("sub", subscriber);
 
-// subscribe sub1 and sub2 to chan through actor chan#subscribe
-hubiquitus.send("sub1", "chan#subscribe");
-hubiquitus.send("sub2", "chan#subscribe");
+// subscribe all sub to chan through actor chan#subscribe
+hubiquitus.send("sub", "chan#subscribe", {mode: "bare"});
 
 // ask publisher to publish every 500 ms
 setInterval(function () {
@@ -30,8 +29,8 @@ setInterval(function () {
 // add a new subscriber after a delay
 setTimeout(function () {
   logger.info("ADDING A SUBSCRIBER");
-  hubiquitus.addActor("sub3", subscriber);
-  hubiquitus.send("sub3", "chan#subscribe");
+  hubiquitus.addActor("sub1", subscriber);
+  hubiquitus.send("sub1", "chan#subscribe");
 }, 2000);
 
 // remove a subsriber after a delay

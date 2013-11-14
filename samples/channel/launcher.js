@@ -18,7 +18,7 @@ hubiquitus.start()
   .addActor("sub", subscriber);
 
 // subscribe all sub to chan through actor chan#subscribe
-hubiquitus.send("sub", "chan#subscribe", {mode: "bare"});
+hubiquitus.send("sub", "chan#subscribe");
 
 // ask publisher to publish every 500 ms
 setInterval(function () {
@@ -31,12 +31,25 @@ setTimeout(function () {
   logger.info("ADDING A SUBSCRIBER");
   hubiquitus.addActor("sub1", subscriber);
   hubiquitus.send("sub1", "chan#subscribe");
-}, 2000);
+}, 1000);
 
 // remove a subsriber after a delay
 setTimeout(function () {
   logger.info("REMOVING A SUBSCRIBER");
-  hubiquitus.removeActor("sub3");
+  hubiquitus.removeActor("sub1");
+}, 2000);
+
+// add a new subscriber after a delay
+setTimeout(function () {
+  logger.info("ADDING A SUBSCRIBER");
+  hubiquitus.addActor("sub2", subscriber);
+  hubiquitus.send("sub2", "chan#subscribe");
+}, 3000);
+
+// unsubsribe a subsriber after a delay
+setTimeout(function () {
+  logger.info("UNSUBSCRIBE A SUBSCRIBER");
+  hubiquitus.send("sub2", "chan#unsubscribe");
 }, 4000);
 
 // publisher actor code

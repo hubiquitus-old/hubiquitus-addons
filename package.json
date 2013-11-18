@@ -14,7 +14,7 @@
   "dependencies": {
     "lodash": "2.2.*",
     "hubiquitus-core": "0.8.0-alpha2",
-    "socket.io": "0.9.*",
+    "sockjs": "0.3.*",
     "tv4": "1.0.*"
   },
   "devDependencies": {

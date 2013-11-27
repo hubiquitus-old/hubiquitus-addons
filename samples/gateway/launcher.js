@@ -6,7 +6,7 @@ var hubiquitus = require('hubiquitus-core');
 var gateway = require(__dirname + '/../../lib/gateway');
 
 var logger = hubiquitus.logger;
-logger.level = 'trace';
+logger.level = 'info';
 
 hubiquitus.start()
   .addActor('ping', function (from, content, reply) {

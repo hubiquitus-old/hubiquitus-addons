@@ -1,7 +1,7 @@
 {
   "name": "hubiquitus-addons",
   "description": "Hubiquitus addons",
-  "version": "0.8.0-beta1",
+  "version": "0.8.0-beta2",
   "homepage": "http://www.hubiquitus.com",
   "repository": {
     "type": "git",
@@ -13,7 +13,7 @@
   },
   "dependencies": {
     "lodash": "2.2.*",
-    "hubiquitus-core": "0.8.0-beta1",
+    "hubiquitus-core": "0.8.0-beta2",
     "sockjs": "0.3.*",
     "tv4": "1.0.*"
   },

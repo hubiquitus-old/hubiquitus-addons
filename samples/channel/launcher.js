@@ -5,8 +5,9 @@
 var hubiquitus = require('hubiquitus-core');
 var channel = require(__dirname + '/../../lib/channel');
 
-var logger = hubiquitus.logger;
-logger.level = 'info';
+var logger = hubiquitus.logger('hubiquitus:addons:samples');
+hubiquitus.logger.enable('hubiquitus:addons:*');
+hubiquitus.logger.level('hubiquitus:*', 'trace');
 
 // channel creation; does'nt provide implementation : will use default in-memory one
 var chan = channel.createChannel('chan');

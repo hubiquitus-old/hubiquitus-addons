@@ -12,9 +12,9 @@ hubiquitus.logger.enable('hubiquitus:core:*');
 hubiquitus.logger.level('hubiquitus:core:*', 'warn');
 
 hubiquitus.start()
-  .addActor('ping', function (from, content, reply) {
-    logger.info(this.id + '> from ' + from + ' : ' + content);
-    reply(null, content);
+  .addActor('ping', function (req) {
+    logger.info(this.id + '> from ' + req.from + ' : ' + req.content);
+    req.reply(null, req.content);
   });
 
 // gateway creation; does'nt provide implementation : will use default in-memory one

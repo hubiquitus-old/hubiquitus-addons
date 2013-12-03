@@ -54,13 +54,13 @@ setTimeout(function () {
 }, 4000);
 
 // publisher actor code
-function publisher(from, content) {
-  logger.info(this.id + '> from ' + from + ' : ' + content);
+function publisher(req) {
+  logger.info(this.id + '> from ' + req.from + ' : ' + req.content);
   logger.info(this.id + '> sending hi to subs');
   this.send('chan', 'hi');
 }
 
 // subscriber actor code
-function subscriber(from, content) {
-  logger.info(this.id + '> from ' + from + ' : ' + content);
+function subscriber(req) {
+  logger.info(this.id + '> from ' + req.from + ' : ' + req.content);
 }

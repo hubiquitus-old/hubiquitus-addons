@@ -6,10 +6,8 @@ var hubiquitus = require('hubiquitus-core');
 var gateway = require(__dirname + '/../../lib/gateway');
 
 var logger = hubiquitus.logger('hubiquitus:addons:samples');
-hubiquitus.logger.enable('hubiquitus:addons:*');
-hubiquitus.logger.level('hubiquitus:addons:*', 'trace');
-hubiquitus.logger.enable('hubiquitus:core:*');
-hubiquitus.logger.level('hubiquitus:core:*', 'warn');
+hubiquitus.logger.enable('hubiquitus:addons:*', 'trace');
+hubiquitus.logger.enable('hubiquitus:core:*', 'warn');
 
 hubiquitus.start()
   .addActor('ping', function (req) {

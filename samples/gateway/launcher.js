@@ -15,6 +15,10 @@ hubiquitus.start()
   .addActor('ping', function (req) {
     logger.info(this.id + '> from ' + req.from + ' : ' + req.content);
     req.reply(null, req.content);
+    var _this = this;
+    this.send(req.from, 'pong', function (err, res) {
+      logger.info(_this.id + '> response from ' + res.from + ' : ' + res.content);
+    });
   });
 
 // gateway creation; does'nt provide implementation : will use default in-memory one

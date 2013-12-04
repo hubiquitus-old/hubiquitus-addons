@@ -1,0 +1,29 @@
+{
+  "name": "hubiquitus-addons",
+  "description": "Hubiquitus addons",
+  "version": "0.8.0-beta3",
+  "homepage": "http://www.hubiquitus.com",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/hubiquitus/hubiquitus-addons"
+  },
+  "main": "./index",
+  "engines": {
+    "node": ">0.10.0"
+  },
+  "dependencies": {
+    "lodash": "2.2.*",
+    "hubiquitus-core": "0.8.0-beta3",
+    "sockjs": "0.3.*",
+    "tv4": "1.0.*"
+  },
+  "devDependencies": {
+    "jshint": "2.3.*",
+    "sinon": "1.7.*",
+    "should": "2.0.*",
+    "mocha": "1.13.*"
+  },
+  "scripts": {
+    "test": "mocha -R spec test/*"
+  }
+}
